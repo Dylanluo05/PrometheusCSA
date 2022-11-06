@@ -18,7 +18,7 @@
   
       ,"page1": {
           "title": "Diet Planner",
-          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Tracker Diet Survey . Name: Date: Height in Inches: Weight in Pounds: Previous Page Do you want to lose, maintain, or gain weight? Lose Weight Maintain Weight Gain Weight Target Weight: Previous Page What is your gender? Male Female Other Do you follow any of these dietary needs? Vegetarian Vegan Pescatarian N/A Previous Page . Weight: &lt;/h2&gt; . Height: &lt;/h2&gt; . &lt;/div&gt; Start Date: &lt;/h2&gt; . Diet Goal: &lt;/h2&gt; . &lt;/div&gt; Weight Goal: &lt;/h2&gt; . Gender: &lt;/h2&gt; . Dietary Needs: &lt;/h2&gt; . &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; Food Calorie Calculator . Search &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; . .",
+          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Planner Diet Survey . Name: Date: Height in Inches: Weight in Pounds: Previous Page Do you want to lose, maintain, or gain weight? Lose Weight Maintain Weight Gain Weight Target Weight: Previous Page What is your gender? Male Female Other Do you follow any of these dietary needs? Vegetarian Vegan Pescatarian N/A Previous Page . Weight: &lt;/h2&gt; . Height: &lt;/h2&gt; . &lt;/div&gt; Start Date: &lt;/h2&gt; . Diet Goal: &lt;/h2&gt; . &lt;/div&gt; Weight Goal: &lt;/h2&gt; . Gender: &lt;/h2&gt; . Dietary Needs: &lt;/h2&gt; . &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; Food Calorie Calculator . Search &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; . .",
           "url": "https://nighthawkcoders.github.io/PrometheusCSA/diet/",
           "relUrl": "/diet/",
           "date": ""
@@ -29,7 +29,7 @@
   
       ,"page2": {
           "title": "Fitness Tracker",
-          "content": "&lt;!DOCTYPE html&gt; . . Home premium Workout Plans Buy Premium My . Fitness . Plan . Plan. Execute. Maintain. . . Enter your name: Enter your height . Feet: Inches: Enter your weight in pounds: Enter the amount of free time you have every day in minutes: Submit .",
+          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Planner My . Fitness . Plan . Plan. Execute. Maintain. . . Enter your name: Enter your height . Feet: Inches: Enter your weight in pounds: Enter the amount of free time you have every day in minutes: Submit .",
           "url": "https://nighthawkcoders.github.io/PrometheusCSA/fitness/",
           "relUrl": "/fitness/",
           "date": ""
@@ -42,7 +42,7 @@
   
       ,"page4": {
           "title": "Workout Plans",
-          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Tracker Workout . Plans . Oftentimes, we find it hard to know what the perfect workout for us is. Using Prometheus, select the ideal workout plan that can help you reach all of your fitness goals. . Cut . Diet | Workouts | Goal | . Bulk . Diet | Workouts | Goal | . Custom . Diet | Workouts | Goal | . .",
+          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Planner Workout . Plans . Oftentimes, we find it hard to know what the perfect workout for us is. Using Prometheus, select the ideal workout plan that can help you reach all of your fitness goals. . Cut . Diet | Workouts | Goal | . Bulk . Diet | Workouts | Goal | . Custom . Diet | Workouts | Goal | . .",
           "url": "https://nighthawkcoders.github.io/PrometheusCSA/plan/",
           "relUrl": "/plan/",
           "date": ""
