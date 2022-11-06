@@ -27,6 +27,28 @@
   
 
   
+      ,"page2": {
+          "title": "Fitness Tracker",
+          "content": "&lt;!DOCTYPE html&gt; . . Home premium Workout Plans Buy Premium My . Fitness . Plan . Plan. Execute. Maintain. . . Enter your name: Enter your height . Feet: Inches: Enter your weight in pounds: Enter the amount of free time you have every day in minutes: Submit .",
+          "url": "https://nighthawkcoders.github.io/PrometheusCSA/fitness/",
+          "relUrl": "/fitness/",
+          "date": ""
+      }
+      
+  
+
+  
+
+  
+      ,"page4": {
+          "title": "Workout Plans",
+          "content": "&lt;!DOCTYPE html&gt; . . Home Workout Plans My Fitness Plan Diet Tracker Workout . Plans . Oftentimes, we find it hard to know what the perfect workout for us is. Using Prometheus, select the ideal workout plan that can help you reach all of your fitness goals. . Cut . Diet | Workouts | Goal | . Bulk . Diet | Workouts | Goal | . Custom . Diet | Workouts | Goal | . .",
+          "url": "https://nighthawkcoders.github.io/PrometheusCSA/plan/",
+          "relUrl": "/plan/",
+          "date": ""
+      }
+      
+  
 
   
   
@@ -44,7 +66,7 @@
   
 
   
-      ,"page8": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/PrometheusCSA/robots.txt",
