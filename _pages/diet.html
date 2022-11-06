@@ -1,0 +1,553 @@
+---
+permalink: /diet/
+title: Diet Planner
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Bebas Neue', cursive;
+            overflow-x: hidden;
+            background-color: white;
+        }
+
+        a {
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 28px;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .navbar-links-container {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            top: 10px;
+        }
+
+        #diet-background-1 {
+            position: relative;
+            background-repeat: no-repeat;
+        }
+
+        .diet-background-1-image, .diet-background-1-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .diet-background-1-image {
+            height: 1000px;
+            background: url("https://images.pexels.com/photos/4137772/pexels-photo-4137772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .diet-background-1-overlay {
+            height: 1000px;
+            background-color: black;
+            opacity: 50%;
+            z-index: 2;
+        }
+
+        .diet-background-1-content {
+            height: 1000px;
+            position: relative;
+            z-index: 3;
+        }
+
+        #diet-background-2 {
+            height: 100px;
+            background-color: black;
+        }
+
+        #diet-background-3 {
+            position: relative;
+            background-repeat: no-repeat
+        }
+
+        .diet-background-3-image, .diet-background-3-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .diet-background-3-image {
+            height: 800px;
+            background: url("https://images.pexels.com/photos/6550823/pexels-photo-6550823.jpeg?auto=compress&cs=tinysrgb&w=600");
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: 1;
+        }
+
+        .diet-background-3-overlay {
+            height: 800px;
+            background-color: darkblue;
+            opacity: 50%;
+            z-index: 2;
+        }
+
+        .diet-background-3-content {
+            height: 800px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .diet-survey-container {
+            height: 625px;
+            width: 650px;
+            background-color: black;
+            margin: auto;
+            margin-top: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diet-survey-page {
+            height: 525px;
+            width: 550px;
+            background-color: #40404F;
+            display: flex;
+        }
+
+        label {
+            font-size: 28px;
+            color: white;
+            display: block;
+            text-align: center;
+        }
+
+        input {
+            height: 25px;
+            width: 300px;
+            display: block;
+            margin: auto;
+        }
+
+        .prev-button {
+            height: 30px;
+            width: 150px;
+            color: red;
+            background-color: white;
+            border: 2px solid red;
+            transition-duration: 0.4s;
+            float: left;
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+
+        .prev-button:hover {
+            color: white;
+            background-color: red;
+        }
+
+        .next-button {
+            height: 30px;
+            width: 150px;
+            color: royalblue;
+            background-color: white;
+            border: 2px solid royalblue;
+            transition-duration: 0.4s;
+            float: right;
+            margin-top: 40px;
+            margin-right: 30px;
+        }
+
+        .next-button:hover {
+            color: white;
+            background-color: royalblue;
+        }
+
+        select {
+            height: 25px;
+            width: 300px;
+            display: block;
+            margin: auto;
+        }
+
+        .next-question-button {
+            height: 25px;
+            width: 150px;
+            background-color: white;
+            border: 2px solid mediumseagreen;
+            color: mediumseagreen;
+            display: block;
+            margin: auto;
+            transition-duration: 0.4s;
+        }
+
+        .next-question-button:hover {
+            background-color: mediumseagreen;
+            color: white;
+        }
+
+        .diet-profile-container {
+            max-height: 300px;
+            max-width: 250px;
+            padding: 10px;
+            display: block;
+            background-color: darkgray;
+            color: black;
+            font-family: 'Quicksand', sans-serif; 
+        }
+
+        .diet-food-container-outer {
+            height: 550px;
+            width: 500px;
+            background-color: black;
+            display: flex;
+            margin: auto;
+            margin-top: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diet-food-container-inner {
+            height: 475px;
+            width: 425px;
+            background-color: darkgray;
+        }
+
+        .food-search-input-1 {
+            height: 30px;
+            width: 250px;
+            float: left;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .food-search-button-1 {
+            height: 30px;
+            width: 125px;
+            margin-left: 15px;
+            margin-top: 15px;
+            background-color: white;
+            color: navy;
+            border: 2px solid navy;
+            transition-duration: 0.4s;
+        }
+
+        .food-search-button-1:hover {
+            background-color: navy;
+            color: white;
+        }
+
+        .food-search-results-container {
+            height: 400px;
+            width: 350px;
+            background-color: #707070;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .search-result-text {
+            font-size: 28px;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+
+        .search-result-container {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .search-result-container:nth-child(odd) {
+            background-color: #484848;
+        }
+        .search-result-container:nth-child(even) {
+            background-color: #585858;
+        }
+
+        ::placeholder {
+            font-size: 12px;
+        }
+
+    </style>
+    <body>
+        <div id = "diet-background-1">
+            <div class = "diet-background-1-image"></div>
+            <div class = "diet-background-1-overlay"></div>
+            <div class = "diet-background-1-content">
+                <div class = "navbar-links-container">
+                    <div style = "height: 25%; width: 60%; display: flex; margin: auto; flex-direction: row; justify-content: space-evenly;">
+                        <a href = "index.html">Home</a>
+                        <a href = "plan.html">Workout Plans</a>
+                        <a href = "fitness.html">My Fitness Plan</a>
+                        <a href = "diet.html">Diet Tracker</a>
+                    </div>
+                </div>
+                <h1 style = "text-align: center; color: white; position: relative; top: 70px;">Diet Survey</h1>
+                <div class = "diet-survey-container" id = "diet-survey-container">
+                    <div class = "diet-survey-page" id = "diet-survey-page-1">
+                        <form id = "diet-page-1-form" onsubmit = "page1CollectData();" style = "margin-top: 21px;">
+                            <label for = "name-1">Name:</label>
+                            <br>
+                            <input type = "text" name = "name-1" id = "name-1" required>
+                            <br>
+                            <label for = "date-1">Date:</label>
+                            <br>
+                            <input type = "date" name = "date-1" id = "date-1" required>
+                            <br>
+                            <label for = "height-1">Height in Inches:</label>
+                            <br>
+                            <input type = "number" name = "height-1" id = "height-1" required>
+                            <br>
+                            <label for = "weight-1">Weight in Pounds:</label>
+                            <br>
+                            <input type = "number" name = "weight-1" id = "weight-1" required>
+                            <input type = "submit" class = "next-button" value = "Next Page">
+                        </form>
+                        <button class = "prev-button">Previous Page</button>
+                    </div>
+                    <div class = "diet-survey-page" id = "diet-survey-page-2">
+                        <form id = "diet-page-2-form" onsubmit = "page2CollectData();" style = "margin-top: 21px;">
+                            <div id = "page-2-question-1">
+                                <label for = "lose-maintain-gain">Do you want to lose, maintain, or gain weight?</label>
+                                <br>
+                                <select name = "lose-maintain-gain" id = "lose-maintain-gain" required>
+                                    <option value = "lose">Lose Weight</option>
+                                    <option value = "maintain">Maintain Weight</option>
+                                    <option value = "gain">Gain Weight</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div id = "page-2-question-2">
+                                <label for = "weight-2">Target Weight:</label>
+                                <br>
+                                <input type = "number" name = "weight-2" id = "weight-2" required>
+                                <br>
+                            </div>
+                            <input type = "submit" class = "next-button" value = "Next Page">
+                        </form>
+                        <button class = "prev-button">Previous Page</button>
+                    </div>
+                    <div class = "diet-survey-page" id = "diet-survey-page-3">
+                        <form id = "diet-page-3-form" onsubmit = "page3CollectData();" style = "margin-top: 21px;">
+                            <label for = "gender">What is your gender?</label>
+                            <br>
+                            <select name = "gender" id = "gender" required>
+                                <option value = "Male">Male</option>
+                                <option value = "Female">Female</option>
+                                <option value = "Other">Other</option>
+                            </select>
+                            <br>
+                            <label for = "dietary-needs">Do you follow any of these dietary needs?</label>
+                            <br>
+                            <select name = "dietary-needs" id = "dietary-needs" required>
+                                <option value = "Vegetarian">Vegetarian</option>
+                                <option value = "Vegan">Vegan</option>
+                                <option value = "Pescatarian">Pescatarian</option>
+                                <option value = "N/A">N/A</option>
+                            </select>
+                            <input type = "submit" class = "next-button" value = "Submit">
+                        </form>
+                        <button class = "prev-button">Previous Page</button>
+                    </div>
+                    <div class = "diet-survey-page" id = "diet-survey-page-4">
+                        <h2 style = "text-align: center; color: white; font-size: 28px;" id = "name-display"></h2>
+                        <div class = "diet-profile-container" style = "margin-left: 50px; margin-top: 30px; display: flex; justify-content: center;">
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; position: relative; left: -2px;">Weight: </h2>
+                            <h4 id = "weight-display" style = "display: inline-block; position: relative; left: 2px;"></h4>
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; margin-left: 30px; position: relative; left: -2px;">Height: </h2>
+                            <h4 id = "height-display" style = "display: inline-block; position: relative; left: 2px;"></h4>
+                        </div>
+                        <div class = "diet-profile-container" style = "margin-left: 210px; margin-top: 30px; max-width: 300px;">
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; position: relative; left: 65px;">Start Date: </h2>
+                            <h4 id = "start-date-display" style = "display: inline-block; position: relative; left: 65px;"></h4>
+                            <br>
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block;">Diet Goal: </h2>
+                            <h4 id = "diet-goal-display" style = "display: inline-block;"></h4>
+                        </div>
+                        <div class = "diet-profile-container" style = "margin-left: 50px; margin-top: 30px; max-width: 300px; max-height: 120px;">
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; position: relative; left: 25px;">Weight Goal: </h2>
+                            <h4 id = "weight-goal-display" style = "display: inline-block; position: relative; left: 25px;"></h4>
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; margin-left: 30px; position: relative; left: 25px;">Gender: </h2>
+                            <h4 id = "gender-display" style = "display: inline-block; position: relative; left: 25px;"></h4>
+                            <h3 style = "font-family: 'Bebas Neue', cursive; display: inline-block; margin-left: 30px; position: relative; top: -20px; left: 20px;">Dietary Needs: </h2>
+                            <h4 id = "dietary-needs-display" style = "display: inline-block; position: relative; top: -20px; left: 20px;"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id = "diet-background-2"></div>
+            <div id = "diet-background-3">
+                <div class = "diet-background-3-image"></div>
+                <div class = "diet-background-3-overlay"></div>
+                <div class = "diet-background-3-content">
+                    <h1 style = "text-align: center; margin: 0; position: relative; top: 50px; color: white;">Food Calorie Calculator</h1>
+                    <div class = "diet-food-container-outer" id = "diet-food-container-outer">
+                        <div class = "diet-food-container-inner">
+                            <input type = "text" placeholder = "Search a specific keyword (e.g. Vegetable)" class = "food-search-input-1" id = "food-search-input-1">
+                            <button class = "food-search-button-1" id = "food-search-button-1">Search</button>
+                            <div class = "food-search-results-container" id = "food-search-results-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            var dietSurveyPage1 = document.getElementById("diet-survey-page-1");
+            dietSurveyPage1.style.display = "block";
+
+            var dietSurveyPage2 = document.getElementById("diet-survey-page-2");
+            dietSurveyPage2.style.display = "none";
+
+            var dietSurveyPage3 = document.getElementById("diet-survey-page-3");
+            dietSurveyPage3.style.display = "none";
+
+            var dietSurveyPage4 = document.getElementById("diet-survey-page-4");
+            dietSurveyPage4.style.display = "none";
+
+            if (localStorage.getItem("dietPage1Data") && localStorage.getItem("dietPage2Data") && localStorage.getItem("dietPage3Data")) {
+                dietSurveyPage1.style.display = "none";
+                dietSurveyPage4.style.display = "block";
+            }
+
+            var personalQuizDataRetrieve1 = JSON.parse(localStorage.getItem("quizData"));
+            var name1 = document.getElementById("name-1");
+            name1.value = personalQuizDataRetrieve1.name;
+            var height1 = document.getElementById("height-1");
+            var heightRetrieve = personalQuizDataRetrieve1.height;
+            var heightRetrieveLength = heightRetrieve.length;
+            if (heightRetrieveLength == 5) {
+                var heightRetrieveFeet = Number(heightRetrieve[0]);
+                var heightRetrieveInches = Number(heightRetrieve[3]);
+            } else if (heightRetrieveLength == 6) {
+                var heightRetrieveFeet = Number(heightRetrieve[0]);
+                var heightRetrieveInches = Number(heightRetrieve.slice(3, 5));
+            }
+            var heightRetrieveCalculation = (heightRetrieveFeet * 12) + heightRetrieveInches;
+            height1.value = heightRetrieveCalculation;
+            var weight1 = document.getElementById("weight-1");
+            weight1.value = personalQuizDataRetrieve1.weight;
+
+            function page1CollectData() {
+                event.preventDefault();
+                var formDataPage1 = $("#diet-page-1-form").serializeArray();
+                localStorage.setItem("dietPage1Data", JSON.stringify(formDataPage1));
+                dietSurveyPage1.style.display = "none";
+                dietSurveyPage2.style.display = "block";
+            }
+
+            function page2CollectData() {
+                event.preventDefault();
+                var formDataPage2 = $("#diet-page-2-form").serializeArray();
+                localStorage.setItem("dietPage2Data", JSON.stringify(formDataPage2));
+                dietSurveyPage2.style.display = "none";
+                dietSurveyPage3.style.display = "block";
+            }
+
+            function page3CollectData() {
+                event.preventDefault();
+                var formDataPage3 = $("#diet-page-3-form").serializeArray();
+                localStorage.setItem("dietPage3Data", JSON.stringify(formDataPage3));
+                dietSurveyPage3.style.display = "none";
+                dietSurveyPage4.style.display = "block";
+                location.reload();
+            }
+
+            var page1DataRetrieve = JSON.parse(localStorage.getItem("dietPage1Data"));
+            var page2DataRetrieve = JSON.parse(localStorage.getItem("dietPage2Data"));
+            var page3DataRetrieve = JSON.parse(localStorage.getItem("dietPage3Data"));
+
+            var nameDisplay = document.getElementById("name-display");
+            var heightDisplay = document.getElementById("height-display");
+            var weightDisplay = document.getElementById("weight-display");
+            var startDateDisplay = document.getElementById("start-date-display");
+            var dietGoalDisplay = document.getElementById("diet-goal-display");
+            var weightGoalDisplay = document.getElementById("weight-goal-display");
+            var genderDisplay = document.getElementById("gender-display");
+            var dietaryNeedsDisplay = document.getElementById("dietary-needs-display");
+
+            var heightDisplayInitial = page1DataRetrieve[2].value;
+            var heightDisplayFeet = Math.floor(heightDisplayInitial/12);
+            var heightDisplayInches = heightDisplayInitial % 12;
+            heightDisplay.innerHTML = heightDisplayFeet + "' " + heightDisplayInches + '"'; 
+
+            weightDisplay.innerHTML = page1DataRetrieve[3].value;
+            nameDisplay.innerHTML = "Hello, " + page1DataRetrieve[0].value;
+
+            startDateDisplay.innerHTML = page1DataRetrieve[1].value;
+            dietGoalDisplay.innerHTML = "You want to " + page2DataRetrieve[0].value + " weight";
+
+            weightGoalDisplay.innerHTML = page2DataRetrieve[1].value;
+            genderDisplay.innerHTML = page3DataRetrieve[0].value;
+            dietaryNeedsDisplay.innerHTML = page3DataRetrieve[1].value;
+
+            var foodSearchInput1 = document.getElementById("food-search-input-1");
+
+            var foodSearchButton1 = document.getElementById("food-search-button-1");
+            var foodSearchResultsContainer = document.getElementById("food-search-results-container");
+            
+            foodSearchButton1.addEventListener("click", foodSearch);
+            
+            var foodResultsList = [
+                {foodName: "carrot", keywords: ["vegetable", "vitamins"]},
+                {foodName: "avocado", keywords: ["vegetable", "healthy oil"]},
+                {foodName: "broccoli", keywords: ["vegetable", "vitamins"]},
+                {foodName: "toast", keywords: ["bread", "carbohydrates"]},
+                {foodName: "rice", keywords: ["grains", "carbohydrates"]},
+                {foodName: "cereal", keywords: ["grains", "carbohydrates"]},
+                {foodName: "chicken", keywords: ["meat", "protein"]},
+                {foodName: "milk", keywords: ["dairy", "drink", "protein"]},
+                {foodName: "beef", keywords: ["meat", "protein"]},
+                {foodName: "steak", keywords: ["meat", "protein"]},
+                {foodName: "pork", keywords: ["meat", "protein"]},
+                {foodName: "egg", keywords: ["dairy", "protein"]},
+                {foodName: "grape", keywords: ["fruit", "vitamins"]}
+            ];
+
+            function foodSearch() {
+                $("#food-search-results-container").children().remove();
+                for (var i = 0; i < foodResultsList.length; i++) {
+                    for (var a = 0; a < foodResultsList[i].keywords.length; a++) {
+                        if (foodSearchInput1.value.toLowerCase() == foodResultsList[i].keywords[a]) {
+                            var searchResult = document.createElement("h2");
+                            searchResult.innerHTML = foodResultsList[i].foodName;
+                            searchResult.setAttribute("class", "search-result-text");
+                            var searchResultContainer = document.createElement("div");
+                            searchResultContainer.setAttribute("class", "search-result-container");
+                            searchResultContainer.appendChild(searchResult);
+                            foodSearchResultsContainer.appendChild(searchResultContainer);
+                        }
+                    }
+                }
+                foodSearchInput1.value = "";
+            }
+
+        </script>
+    </body>
+</html>
