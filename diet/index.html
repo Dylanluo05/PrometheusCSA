@@ -431,23 +431,25 @@
                 dietSurveyPage4.style.display = "block";
             }
 
-            var personalQuizDataRetrieve1 = JSON.parse(localStorage.getItem("quizData"));
-            var name1 = document.getElementById("name-1");
-            name1.value = personalQuizDataRetrieve1.name;
-            var height1 = document.getElementById("height-1");
-            var heightRetrieve = personalQuizDataRetrieve1.height;
-            var heightRetrieveLength = heightRetrieve.length;
-            if (heightRetrieveLength == 5) {
-                var heightRetrieveFeet = Number(heightRetrieve[0]);
-                var heightRetrieveInches = Number(heightRetrieve[3]);
-            } else if (heightRetrieveLength == 6) {
-                var heightRetrieveFeet = Number(heightRetrieve[0]);
-                var heightRetrieveInches = Number(heightRetrieve.slice(3, 5));
+            if (localStorage.getItem("quizData")) {
+                var personalQuizDataRetrieve1 = JSON.parse(localStorage.getItem("quizData"));
+                var name1 = document.getElementById("name-1");
+                name1.value = personalQuizDataRetrieve1.name;
+                var height1 = document.getElementById("height-1");
+                var heightRetrieve = personalQuizDataRetrieve1.height;
+                var heightRetrieveLength = heightRetrieve.length;
+                if (heightRetrieveLength == 5) {
+                    var heightRetrieveFeet = Number(heightRetrieve[0]);
+                    var heightRetrieveInches = Number(heightRetrieve[3]);
+                } else if (heightRetrieveLength == 6) {
+                    var heightRetrieveFeet = Number(heightRetrieve[0]);
+                    var heightRetrieveInches = Number(heightRetrieve.slice(3, 5));
+                }
+                var heightRetrieveCalculation = (heightRetrieveFeet * 12) + heightRetrieveInches;
+                height1.value = heightRetrieveCalculation;
+                var weight1 = document.getElementById("weight-1");
+                weight1.value = personalQuizDataRetrieve1.weight;
             }
-            var heightRetrieveCalculation = (heightRetrieveFeet * 12) + heightRetrieveInches;
-            height1.value = heightRetrieveCalculation;
-            var weight1 = document.getElementById("weight-1");
-            weight1.value = personalQuizDataRetrieve1.weight;
 
             function page1CollectData() {
                 event.preventDefault();
