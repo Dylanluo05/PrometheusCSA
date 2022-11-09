@@ -57,6 +57,14 @@
   
 
   
+      ,"page7": {
+          "title": "World-Population",
+          "content": "&lt;!DOCTYPE html&gt; . . Live date and time . . World Population . . enter . .",
+          "url": "https://nighthawkcoders.github.io/PrometheusCSA/world-population/",
+          "relUrl": "/world-population/",
+          "date": ""
+      }
+      
   
 
   
@@ -66,7 +74,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/PrometheusCSA/robots.txt",
