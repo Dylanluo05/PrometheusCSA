@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">       </script>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <body>
+     <h2> Live date and time </h2>
+    <h3 id = "a"></h3>
+
+    <h2> World Population </h2>
+    <h3 id = "population"> </h3>
+
+
+  <input id="long"  placeholder="Your country">
+
+
+<br> 
+     <br>  
+    <button onclick="sub()" class=out id= "button">enter</button> 
+ <br>  
+
+
+    <h5 id="pop"></h5> 
+    
+
+    
+    <script>
+
+      /*setTimeout(function () { location.reload(true); }, 4000);*/
+      var A = document.getElementById("a");
+      var Population = document.getElementById("population");
+
+      function animation() {
+        var date = new Date();
+        var dateNew = date.toLocaleString();
+      
+        A.innerHTML = dateNew;
+      }
+
+      setInterval(animation, 1000);
+
+      const settings = {
+	      "async": true,
+      	"crossDomain": true,
+      	"url": "https://world-population.p.rapidapi.com/worldpopulation",
+      	"method": "GET",
+      	"headers": {
+      		"X-RapidAPI-Key": "9205057203msh04a5e5cadaa01c8p11274ejsnf67dea2bb043",
+      		"X-RapidAPI-Host": "world-population.p.rapidapi.com"
+      	}
+      };
+      
+      $.ajax(settings).done(function (response) {
+      	console.log(response);
+        var worldPopulation = response.body.world_population;
+        function populationAnimation() {
+          worldPopulation++;
+          population.innerHTML = worldPopulation;
+          worldPopulation++;
+          population.innerHTML = worldPopulation;
+          worldPopulation--;
+          population.innerHTML = worldPopulation;
+          worldPopulation++;
+          population.innerHTML = worldPopulation;
+          worldPopulation--;
+          population.innerHTML = worldPopulation;
+        }
+        setInterval(populationAnimation, 250);
+      });
+      
+    </script>
+  </body>
+</html>
